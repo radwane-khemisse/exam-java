@@ -48,4 +48,14 @@ public class Repas {
                 ", supplements=" + supplements +
                 '}';
     }
+
+    public double calculerTotal() {
+        if (supplements == null || supplements.isEmpty()) {
+            return 0.0;
+        }
+        return supplements.stream()
+                .mapToDouble(Supplement::getPrix)
+                .sum();
+    }
+
 }

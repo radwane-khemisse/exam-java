@@ -12,10 +12,8 @@ public class SingletonConnexionDb {
         if(connection == null){
             try {
                 connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/restaurant", "redone", "redone");
-                System.out.print("connextion established");
             } catch (SQLException e) {
                 e.printStackTrace();
-                System.out.print("error established");
             }
         }
         return connection;
